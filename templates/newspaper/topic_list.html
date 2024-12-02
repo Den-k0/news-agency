@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>
+    Topics
+    <a href="{% url 'newspaper:topic-create' %}" class="btn btn-primary link-to-page float-right">
+      Add
+    </a>
+  </h1>
+  <table class="table">
+    <tr>
+      <th>Name</th>
+      <th>Update</th>
+      <th>Delete</th>
+    </tr>
+
+    {% for topic in topic_list %}
+      <tr>
+        <td>
+          {{ topic.name }}
+        </td>
+        <td>
+          <a href="{% url 'newspaper:topic-update' pk=topic.id %}" class="btn btn-dark">
+            Update
+          </a>
+        </td>
+        <td>
+          <a href="{% url 'newspaper:topic-delete' pk=topic.id %}" class="btn btn-danger">
+            Delete
+          </a>
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock %}
