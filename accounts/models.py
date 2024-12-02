@@ -3,4 +3,4 @@ from django.db import models
 
 
 class Redactor(AbstractUser):
-    years_of_experience = models.IntegerField()
+    years_of_experience = models.IntegerField(default=0)
