@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Newspaper, Topic
 
-# Register your models here.
+
+admin.site.register(Newspaper)
+admin.site.register(Topic)
