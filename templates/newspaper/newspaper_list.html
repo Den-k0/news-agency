@@ -25,7 +25,7 @@
           </div>
         
           <p class="card-text">
-            <strong>Content:</strong> {{ newspaper.content }}
+            <strong>Content:</strong> {{ newspaper.content|slice:":100" }}...
           </p>
           <p class="card-text"><strong>Topic:</strong> {{ newspaper.topic }}</p>
           <p class="card-text"><strong>Publishers:</strong>
@@ -34,14 +34,10 @@
             {% endfor %}
           </p>
         </div>
-
+      
         <div class="card-footer d-flex justify-content-between">
           <div>
-            <a href="#" class="btn btn-primary">Read More</a>
-          </div>
-          <div>
-            <a href="{% url 'newspaper:newspaper-update' pk=newspaper.id %}" class="btn btn-dark">Update</a>
-            <a href="{% url 'newspaper:newspaper-delete' pk=newspaper.id %}" class="btn btn-danger">Delete</a>
+            <a href="{% url 'newspaper:newspaper-detail' pk=newspaper.id %}" class="btn btn-dark">Read More</a>
           </div>
         </div>
 
