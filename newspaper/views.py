@@ -40,3 +40,29 @@ class TopicDeleteView(generic.DeleteView):
     model = Topic
     success_url = reverse_lazy("newspaper:topic-list")
     template_name = "newspaper/topic_confirm_delete.html"
+
+
+# Newspaper
+class NewspaperListView(generic.ListView):
+    model = Newspaper
+    template_name = "newspaper/newspaper_list.html"
+
+
+class NewspaperCreateView(generic.CreateView):
+    model = Newspaper
+    fields = "__all__"
+    success_url = reverse_lazy("newspaper:newspaper-list")
+    template_name = "newspaper/newspaper_form.html"
+
+
+class NewspaperUpdateView(generic.UpdateView):
+    model = Newspaper
+    fields = "__all__"
+    success_url = reverse_lazy("newspaper:newspaper-list")
+    template_name = "newspaper/newspaper_form.html"
+
+
+class NewspaperDeleteView(generic.DeleteView):
+    model = Newspaper
+    success_url = reverse_lazy("newspaper:newspaper-list")
+    template_name = "newspaper/newspaper_confirm_delete.html"
