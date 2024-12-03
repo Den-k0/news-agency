@@ -25,16 +25,16 @@
       </div>
     </div>
 
-    <div class="mb-3">
-      <p><strong>Content:</strong></p>
-      <p class="lead">{{ newspaper.content }}</p>
-    </div>
+    <p>
+      <strong>Content:</strong>
+      <span class="lead" style="white-space: pre-wrap; word-wrap: break-word;">{{ newspaper.content }}</span>
+    </p>
 
     <div class="d-flex justify-content-between">
       <a href="{% url 'newspaper:newspaper-update' pk=newspaper.id %}" class="btn btn-primary">Update</a>
       <a href="{% url 'newspaper:newspaper-delete' pk=newspaper.id %}" class="btn btn-danger">Delete</a>
     </div>
+    <br>
 
   </div>
 {% endblock %}
-
