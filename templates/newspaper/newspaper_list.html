@@ -10,38 +10,36 @@
   <br>
 
   {% for newspaper in newspaper_list %}
-    <div class="col">
-      <div class="card h-100">
-        <div class="card-body">
-        
-          <div class="d-flex justify-content-between">
-            <div>
-              <h5 class="card-title">Title: {{ newspaper.title }}</h5>
-            </div>
-            <div>
-              <p class="card-text"><small class="text-muted"><strong>Published
-                Date:</strong> {{ newspaper.published_date }} </small></p>
-            </div>
-          </div>
-        
-          <p class="card-text">
-            <strong>Content:</strong> {{ newspaper.content|slice:":100" }}...
-          </p>
-          <p class="card-text"><strong>Topic:</strong> {{ newspaper.topic }}</p>
-          <p class="card-text"><strong>Publishers:</strong>
-            {% for publisher in newspaper.publishers.all %}
-              {{ publisher.first_name }} {{ publisher.last_name }} ({{ publisher.username }})
-            {% endfor %}
-          </p>
-        </div>
-      
-        <div class="card-footer d-flex justify-content-between">
+    <div class="card h-100">
+      <div class="card-body">
+
+        <div class="d-flex justify-content-between">
           <div>
-            <a href="{% url 'newspaper:newspaper-detail' pk=newspaper.id %}" class="btn btn-dark">Read More</a>
+            <h5 class="card-title">Title: {{ newspaper.title }}</h5>
+          </div>
+          <div>
+            <p class="card-text"><small class="text-muted"><strong>Published
+              Date:</strong> {{ newspaper.published_date }} </small></p>
           </div>
         </div>
 
+        <p class="card-text">
+          <strong>Content:</strong> {{ newspaper.content|slice:":100" }}...
+        </p>
+        <p class="card-text"><strong>Topic:</strong> {{ newspaper.topic }}</p>
+        <p class="card-text"><strong>Publishers:</strong>
+          {% for publisher in newspaper.publishers.all %}
+            {{ publisher.first_name }} {{ publisher.last_name }} ({{ publisher.username }})
+          {% endfor %}
+        </p>
       </div>
+
+      <div class="card-footer d-flex justify-content-between">
+        <div>
+          <a href="{% url 'newspaper:newspaper-detail' pk=newspaper.id %}" class="btn btn-dark">Read More</a>
+        </div>
+      </div>
+
     </div>
     <br>
   {% endfor %}
