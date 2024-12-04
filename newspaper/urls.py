@@ -4,7 +4,8 @@ from accounts.views import (
     RedactorDetailView,
     RedactorCreateView,
     RedactorUpdateView,
-    RedactorDeleteView, RedactorListView
+    RedactorDeleteView,
+    RedactorListView,
 )
 
 from newspaper.views import (

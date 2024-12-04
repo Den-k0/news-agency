@@ -12,10 +12,11 @@ class RedactorListView(LoginRequiredMixin, generic.ListView):
     template_name = "newspaper/redactor_list.html"
     context_object_name = "redactor_list"
 
+
 class RedactorDetailView(LoginRequiredMixin, generic.DetailView):
     model = Redactor
     queryset = Redactor.objects.all()
-    template_name = "newspaper/redactor_datail.html"
+    template_name = "newspaper/redactor_detail.html"
 
 
 class RedactorCreateView(LoginRequiredMixin, generic.CreateView):
