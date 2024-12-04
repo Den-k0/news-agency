@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>{{ redactor.name }}</h1>
-  <p>{{ redactor.description }}</p>
+  <h1>{{ redactor.first_name }} {{ redactor.last_name }} ({{ redactor.username }})</h1>
+  <p>Years of experience: {{ redactor.years_of_experience }}</p>
+  <p>{{ redactor.last_login }}</p>
 {% endblock %}
