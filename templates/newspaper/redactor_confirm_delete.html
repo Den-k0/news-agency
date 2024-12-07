@@ -5,7 +5,7 @@
   <p>Are you sure you want to delete "{{ redactor }}"?</p>
   <form method="post">
     {% csrf_token %}
-    <button type="submit" class="btn btn-primary">Confirm</button>
+    <button type="submit" class="btn btn-danger">Yes</button>
     <a href="{% url 'newspaper:redactor-list' %}" class="btn btn-dark">Cancel</a>
   </form>
 {% endblock %}
