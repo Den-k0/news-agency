@@ -11,6 +11,7 @@ class RedactorListView(LoginRequiredMixin, generic.ListView):
     model = Redactor
     template_name = "newspaper/redactor_list.html"
     context_object_name = "redactor_list"
+    paginate_by = 5
 
 
 class RedactorDetailView(LoginRequiredMixin, generic.DetailView):
