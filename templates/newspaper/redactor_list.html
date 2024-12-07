@@ -7,6 +7,7 @@
     <tr>
       <th>ID</th>
       <th>Username</th>
+      <th>Full name</th>
       <th>Email</th>
       <th>Years of Experience</th>
       <th>Actions</th>
@@ -16,7 +17,8 @@
     {% for redactor in redactor_list %}
       <tr>
         <td>{{ redactor.id }}</td>
-        <td>{{ redactor.username }}</td>
+        <td><a href="{{ redactor.get_absolute_url }}">{{ redactor.username }} {% if user == redactor %} (Me){% endif %}</a>
+        <td>{{ redactor.first_name }} {{ redactor.last_name }}</td>
         <td>{{ redactor.email }}</td>
         <td>{{ redactor.years_of_experience }}</td>
         <td>
