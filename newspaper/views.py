@@ -49,7 +49,7 @@ class TopicDeleteView(LoginRequiredMixin, generic.DeleteView):
 class NewspaperListView(LoginRequiredMixin, generic.ListView):
     model = Newspaper
     template_name = "newspaper/newspaper_list.html"
-    paginate_by = 3
+    paginate_by = 5
 
 
 class NewspaperCreateView(LoginRequiredMixin, generic.CreateView):
