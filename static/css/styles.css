@@ -1,0 +1,14 @@
+.beige {
+    background: beige;
+}
+
+.nav-link.active {
+    background-color: #ffc107 !important;
+    color: #000 !important;
+    font-weight: bold;
+}
+
+i {
+    font-size: 1.3rem;
+    padding-right: 3px;
+}
