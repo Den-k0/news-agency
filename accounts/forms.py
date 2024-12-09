@@ -15,3 +15,11 @@ class RedactorUpdateForm(forms.ModelForm):
         model = Redactor
         fields = ('first_name', 'last_name', 'email', 'years_of_experience')
 
+
+class RedactorSearchForm(forms.Form):
+    name = forms.CharField(
+        max_length=255,
+        required=False,
+        label="",
+        widget=forms.TextInput(attrs={"placeholder": "Search by first or last name"})
+    )
