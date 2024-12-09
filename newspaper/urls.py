@@ -7,7 +7,6 @@ from accounts.views import (
     RedactorDeleteView,
     RedactorListView,
 )
-
 from newspaper.views import (
     index,
     TopicListView,
