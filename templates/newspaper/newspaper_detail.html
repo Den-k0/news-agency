@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="d-flex align-items-center justify-content-between">
+    <h1 class="display-4 text-primary mb-0">{{ newspaper.title }}</h1>
+    <a href="{% url 'newspaper:newspaper-list' %}" class="btn btn-dark btn-lg ml-2">Go back</a>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <p><strong>Published Date:</strong> <span class="text-muted">{{ newspaper.published_date }}</span></p>
+      <p><strong>Topic:</strong> <span class="badge bg-info">{{ newspaper.topic }}</span></p>
+    </div>
+    <div class="col-md-6">
+      <p><strong>Publishers:</strong></p>
+      <ul class="list-unstyled">
+        {% for publisher in newspaper.publishers.all %}
+          <li>
+            <strong>{{ publisher.first_name }} {{ publisher.last_name }}</strong>
+            (<em>{{ publisher.username }}</em>)
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    <strong>Content:</strong>
+    <span class="lead" style="white-space: pre-wrap; word-wrap: break-word;">{{ newspaper.content }}</span>
+  </p>
+
+  <div class="d-flex justify-content-between">
+    <a href="{% url 'newspaper:newspaper-update' pk=newspaper.id %}" class="btn btn-primary">Update</a>
+    <a href="{% url 'newspaper:newspaper-delete' pk=newspaper.id %}" class="btn btn-danger">Delete</a>
+  </div>
+  <br>
+
+{% endblock %}
