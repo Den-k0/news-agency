@@ -32,3 +32,7 @@ python manage.py runserver  # starts Djagno Server
 ## Demo
 
 ![Website Interface](demo.png)
+
+## News Agency Database Structure
+
+![News Agency Database Structure](news_agency_diagram.webp)

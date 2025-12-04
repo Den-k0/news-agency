@@ -4,3 +4,5 @@
 db.sqlite3
 .env
 dump.json
+.DS_Store
+
