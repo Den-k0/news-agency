@@ -2,11 +2,22 @@
 # Exit on error
 set -o errexit
 
-# Modify this line as needed for your package manager (pip, poetry, etc.)
-pip install -r requirements.txt
+echo "Waiting for DB..."
 
-# Convert static asset files
+echo "Collecting static files..."
 python manage.py collectstatic --no-input
 
-# Apply any outstanding database migrations
+echo "Running migrations..."
 python manage.py migrate
+
+if [ "$DJANGO_SUPERUSER_USERNAME" ] && [ "$DJANGO_SUPERUSER_PASSWORD" ]; then
+    echo "Creating superuser..."
+    python manage.py createsuperuser \
+        --noinput \
+        --username "$DJANGO_SUPERUSER_USERNAME" \
+        --email "$DJANGO_SUPERUSER_EMAIL" \
+        || true
+fi
+
+echo "Starting server..."
+exec "$@"
